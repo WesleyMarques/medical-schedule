@@ -17,60 +17,50 @@ produces:
 
 
 definitions:
-  ExampleBody:
+  ScheduleRule:
     type: object
     title: example
-    required:
-      - name
     properties:
-      name:
-        type: string
-        example: no_stress
+      type: number
 
 paths:
-  /examples:
-    get:
-      tags:
-        - Examples
-      description: Fetch all examples
-      responses:
-        200:
-          description: Returns all examples
+  /schedule-rule:
     post:
       tags:
-        - Examples
-      description: Create a new example
+        - Schedule
+        - Rule
+      description: Create a new Schedule
       parameters:
-        - name: example
+        - name: schedule
           in: body
           description: an example
           required: true
           schema: 
-            $ref: "#/definitions/ExampleBody"
+            $ref: "#/definitions/ScheduleRule"
       responses:
         200:
           description: Returns all examples
 
-  /examples/{id}:
-    get:
-      tags:
-        - Examples
-      parameters:
-        - name: id
-          in: path
-          required: true
-          description: The id of the example to retrieve
-          type: integer
-      responses:
-        200:
-          description: Return the example with the specified id
-        404:
-          description: Example not found
+  # /examples/{id}:
+  #   get:
+  #     tags:
+  #       - Examples
+  #     parameters:
+  #       - name: id
+  #         in: path
+  #         required: true
+  #         description: The id of the example to retrieve
+  #         type: integer
+  #     responses:
+  #       200:
+  #         description: Return the example with the specified id
+  #       404:
+  #         description: Example not found
 
-  /spec:
-    get:
-      tags:
-        - Specification
-      responses:
-        200:
-          description: Return the API specification
+  # /spec:
+  #   get:
+  #     tags:
+  #       - Specification
+  #     responses:
+  #       200:
+  #         description: Return the API specification
