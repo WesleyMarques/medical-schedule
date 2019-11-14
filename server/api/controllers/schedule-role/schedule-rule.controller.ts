@@ -2,17 +2,20 @@ import ScheduleService from '../../services/schedule-role.service';
 import { Request, Response } from 'express';
 
 export class ScheduleRuleController {
-  // all(req: Request, res: Response): void {
-  //   ExamplesService.all().then(r => res.json(r));
-  // }
+  all(req: Request, res: Response): void {
+    ScheduleService.all().then(r => res.json(r));
+  }
 
-  // byId(req: Request, res: Response): void {
-  //   const id = Number.parseInt(req.params['id'])
-  //   ExamplesService.byId(id).then(r => {
-  //     if (r) res.json(r);
-  //     else res.status(404).end();
-  //   });
-  // }
+  deleteById(req: Request, res: Response): void {
+    const id = req.params['id'];
+    ScheduleService.deleteById(id).then(r => 
+      res
+        .status(200)
+        .json(r),
+        error => res
+        .status(404)
+        .json(error));
+  }
 
   create(req: Request, res: Response): void {
     ScheduleService.create(req.body.schedule, req.body._builder).then(r =>

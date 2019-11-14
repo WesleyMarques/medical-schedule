@@ -5,12 +5,20 @@ let db = require('./data.json');
 export class Dao{
 
     getAll(){
-        return db;
+        return db["schedule-rules"];
     }
 
     create(jsonData: Object){
         db["schedule-rules"].push(jsonData);
         this._persisteJSON(db);
+    }
+
+    deleteById(id:string){
+        let tempRules = db["schedule-rules"];
+        const valueDeleted = _.remove(tempRules, {"id":id});
+        db["schedule-rules"] = tempRules
+        this._persisteJSON(db);
+        return valueDeleted.length > 0;
     }
 
     clear(){

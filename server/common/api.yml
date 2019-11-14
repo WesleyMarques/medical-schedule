@@ -43,27 +43,47 @@ paths:
       responses:
         200:
           description: Returns all examples
+    get:
+      tags:
+        - Schedule
+        - Rule
+      responses:
+        200:
+          description: Return the Rules or empty list
 
-  # /examples/{id}:
-  #   get:
-  #     tags:
-  #       - Examples
-  #     parameters:
-  #       - name: id
-  #         in: path
-  #         required: true
-  #         description: The id of the example to retrieve
-  #         type: integer
-  #     responses:
-  #       200:
-  #         description: Return the example with the specified id
-  #       404:
-  #         description: Example not found
-
-  # /spec:
-  #   get:
-  #     tags:
-  #       - Specification
-  #     responses:
-  #       200:
-  #         description: Return the API specification
+  /schedule-rule/{id}:
+    delete:
+      tags:
+        - Schedule
+        - Rule
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: The id of rule to delete
+          type: string
+      responses:
+        200:
+          description: Return the example with the specified id
+        404:
+          description: Example not found
+  /schedule:
+    get:
+      tags:
+        - Schedule
+      parameters:
+        - name: start
+          in: query
+          required: true
+          description: The start date of query
+          type: string
+        - name: end
+          in: query
+          required: true
+          description: The end date of query
+          type: string
+      responses:
+        200:
+          description: Return schedule dates between params
+        404:
+          description: not found
