@@ -19,7 +19,8 @@
     "lodash": "^4.17.15",
     "moment": "^2.24.0",
     "pino": "^5.13.6",
-    "swagger-express-middleware": "^2.0.3"
+    "swagger-express-middleware": "^2.0.3",
+    "uuid": "^3.3.3"
   },
   "devDependencies": {
     "@types/chai": "^4.2.4",

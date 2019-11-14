@@ -8,6 +8,7 @@ export default class SpecificRule extends Rule{
 
     toJSON(){
         return {
+            "id": this.id,
             "type": 0,
             "rule": this.rule.toString().split("/")[1],
             "start": this.start,

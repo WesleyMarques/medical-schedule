@@ -1,5 +1,6 @@
 import Rule from "./Rule";
 import Days from "./days.enum";
+import { threadId } from "worker_threads";
 
 export default class WeeklyRule extends Rule{
     days: Days[];
@@ -10,6 +11,7 @@ export default class WeeklyRule extends Rule{
 
     toJSON(){
         return {
+            "id": this.id,
             "type": 2,
             "rule": this.rule.toString().split("/")[1],
             "start": this.start,

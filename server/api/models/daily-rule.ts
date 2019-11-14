@@ -7,6 +7,7 @@ export default class DailyRule extends Rule{
 
     toJSON(){
         return {
+            "id": this.id,
             "type": 1,
             "rule": '',
             "start": this.start,
