@@ -15,11 +15,6 @@ export class ScheduleRoleService {
     return Promise.resolve(dao.getAll());
   }
 
-  // byId(id: number): Promise<Example> {
-  //   L.info(`fetch example with id ${id}`);
-  //   return this.all().then(r => r[id])
-  // }
-
   deleteById(id: string): Promise<String>{
     const wasDeleted = dao.deleteById(id);
     if(!wasDeleted) return Promise.reject("not found");
