@@ -22,6 +22,9 @@ definitions:
     title: example
     properties:
       type: number
+      startTime: string
+      finishTime: string
+      rule: string
 
 paths:
   /schedule-rule:

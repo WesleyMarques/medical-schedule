@@ -1,3 +1,3 @@
 export default enum Days {
-    MON, THU, WED, THU, FRI, SAB, SUN
+    MON, TUE, WED, THU, FRI, SAB, SUN
 }

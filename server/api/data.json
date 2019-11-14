@@ -1,1 +1,1 @@
-{"schedule-rules":[{"type":1,"regex":{}}]}
+{"schedule-rules":[{"type":0,"rule":"01-12-2019","start":"14:00","end":"19:00"},{"type":1,"rule":"","start":"14:00","end":"15:00"},{"type":2,"rule":"MON|WED|FRI","start":"14:00","end":"19:00"}]}

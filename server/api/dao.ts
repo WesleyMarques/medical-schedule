@@ -9,7 +9,6 @@ export class Dao{
     }
 
     create(jsonData: Object){
-        this.clear();
         db["schedule-rules"].push(jsonData);
         this._persisteJSON(db);
     }

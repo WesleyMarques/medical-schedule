@@ -18,7 +18,7 @@ export class ScheduleRoleService {
 
   create(jsonData:Object, builder: any): Promise<String> {
     L.info(`create role with name`);
-    let rule = new builder();
+    let rule = new builder(jsonData);
     dao.create(rule.toJSON());
     return Promise.resolve("OK");
   }
