@@ -1,10 +1,6 @@
 import Rule from "./Rule";
-import Days from "./days.enum";
-import { threadId } from "worker_threads";
 
 export default class WeeklyRule extends Rule{
-    days: Days[];
-
     constructor(data:Object){
         super(new RegExp(data["rule"], 'i'), data["start"], data["end"]);
     }
